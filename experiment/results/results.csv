@@ -1,0 +1,17 @@
+dataset_key,dataset,language,model,accuracy,macro_f1,train_time_sec,inference_time_sec,n_params,n_train,n_test
+ag_news,AG News,en,TF-IDF + Logistic Regression,0.9041,0.9043,0.2788,0.000542,80004,5473,1564
+ag_news,AG News,en,TF-IDF + Linear SVM,0.9111,0.9114,0.0344,0.000000,80004,5473,1564
+ag_news,AG News,en,TextCNN,0.9041,0.9045,7.7025,0.089841,1743584,5473,1564
+ag_news,AG News,en,BiLSTM,0.8862,0.8863,14.1045,0.208472,1919749,5473,1564
+20news_4class,20 Newsgroups,en,TF-IDF + Logistic Regression,0.8581,0.8580,0.2019,0.001004,80004,1626,465
+20news_4class,20 Newsgroups,en,TF-IDF + Linear SVM,0.8753,0.8752,0.0240,0.000000,80004,1626,465
+20news_4class,20 Newsgroups,en,TextCNN,0.8731,0.8732,21.7413,0.245058,2414688,1626,465
+20news_4class,20 Newsgroups,en,BiLSTM,0.8065,0.8069,75.2215,0.738666,2590853,1626,465
+tnews,TNews,zh,TF-IDF + Logistic Regression,0.5330,0.5299,0.3039,0.000000,104300,3499,1000
+tnews,TNews,zh,TF-IDF + Linear SVM,0.5150,0.5114,0.0402,0.002004,104300,3499,1000
+tnews,TNews,zh,TextCNN,0.4930,0.4882,4.7213,0.047959,457454,3499,1000
+tnews,TNews,zh,BiLSTM,0.3940,0.3577,9.2301,0.183408,633355,3499,1000
+chnsenticorp,ChnSentiCorp,zh,TF-IDF + Logistic Regression,0.8772,0.8771,0.1552,0.001516,20001,5583,1596
+chnsenticorp,ChnSentiCorp,zh,TF-IDF + Linear SVM,0.8891,0.8890,0.0427,0.000762,20001,5583,1596
+chnsenticorp,ChnSentiCorp,zh,TextCNN,0.8622,0.8621,31.4428,0.355655,559494,5583,1596
+chnsenticorp,ChnSentiCorp,zh,BiLSTM,0.8227,0.8226,71.5945,2.702187,735747,5583,1596

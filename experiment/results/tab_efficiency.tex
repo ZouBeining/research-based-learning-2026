@@ -1,0 +1,24 @@
+% 自动生成，请勿手工修改：训练时间与参数量
+\begin{table}[htbp]
+\centering
+\caption{训练时间（秒）与可训练参数量。线性模型在该规模数据上的训练时间通常在 0.1 秒量级。}
+\label{tab:efficiency}
+\small
+\begin{tabular}{llcccc}
+\toprule
+模型 & 指标 & AG News & 20 Newsgroups & TNews & ChnSentiCorp \\
+\midrule
+TF-IDF + LR & 训练时间 & 0.28 & 0.20 & 0.30 & 0.16 \\
+ & 参数量 & 80.0K & 80.0K & 104.3K & 20.0K \\
+\midrule
+TF-IDF + SVM & 训练时间 & 0.03 & 0.02 & 0.04 & 0.04 \\
+ & 参数量 & 80.0K & 80.0K & 104.3K & 20.0K \\
+\midrule
+TextCNN & 训练时间 & 7.70 & 21.7 & 4.72 & 31.4 \\
+ & 参数量 & 1.74M & 2.41M & 457.5K & 559.5K \\
+\midrule
+BiLSTM & 训练时间 & 14.1 & 75.2 & 9.23 & 71.6 \\
+ & 参数量 & 1.92M & 2.59M & 633.4K & 735.7K \\
+\bottomrule
+\end{tabular}
+\end{table}

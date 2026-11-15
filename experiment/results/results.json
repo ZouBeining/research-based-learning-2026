@@ -1,0 +1,439 @@
+{
+  "timestamp": "2026-09-12T09:38:12.239866",
+  "device": "cpu",
+  "config": {
+    "test_size": 0.2,
+    "val_size": 0.1,
+    "random_state": 42,
+    "tfidf_max_features": 20000,
+    "tfidf_ngram_range": [
+      1,
+      2
+    ],
+    "tfidf_min_df": 2,
+    "nn_vocab_size": 30000,
+    "nn_min_freq": 2,
+    "lr_C": 1.0,
+    "lr_max_iter": 1000,
+    "svm_C": 0.5,
+    "svm_max_iter": 3000,
+    "cnn_embed_dim": 128,
+    "cnn_num_filters": 100,
+    "cnn_filter_sizes": [
+      3,
+      4,
+      5
+    ],
+    "cnn_dropout": 0.5,
+    "cnn_lr": 0.001,
+    "cnn_epochs": 8,
+    "cnn_batch_size": 64,
+    "cnn_patience": 3,
+    "lstm_embed_dim": 128,
+    "lstm_hidden_dim": 128,
+    "lstm_num_layers": 1,
+    "lstm_dropout": 0.5,
+    "lstm_lr": 0.001,
+    "lstm_epochs": 8,
+    "lstm_batch_size": 64,
+    "lstm_patience": 3
+  },
+  "dataset_stats": {
+    "ag_news": {
+      "name": "AG News",
+      "language": "en",
+      "source": "fancyzhx/ag_news",
+      "n_samples": 7819,
+      "n_classes": 4,
+      "label_distribution": {
+        "World": 1890,
+        "Sports": 1929,
+        "Business": 2000,
+        "Sci/Tech": 2000
+      },
+      "avg_len": 37.89192991431129,
+      "median_len": 37.0,
+      "max_len": 146,
+      "min_len": 11
+    },
+    "20news_4class": {
+      "name": "20 Newsgroups",
+      "language": "en",
+      "source": "sklearn.datasets.fetch_20newsgroups",
+      "n_samples": 2324,
+      "n_classes": 4,
+      "label_distribution": {
+        "comp.graphics": 591,
+        "rec.sport.baseball": 568,
+        "sci.med": 584,
+        "talk.politics.guns": 581
+      },
+      "avg_len": 194.43545611015492,
+      "median_len": 84.0,
+      "max_len": 9436,
+      "min_len": 3
+    },
+    "tnews": {
+      "name": "TNews",
+      "language": "zh",
+      "source": "C-MTEB/TNews-classification",
+      "n_samples": 4999,
+      "n_classes": 10,
+      "label_distribution": {
+        "news_culture": 500,
+        "news_entertainment": 500,
+        "news_sports": 499,
+        "news_finance": 500,
+        "news_car": 500,
+        "news_edu": 500,
+        "news_tech": 500,
+        "news_military": 500,
+        "news_travel": 500,
+        "news_world": 500
+      },
+      "avg_len": 19.9373874774955,
+      "median_len": 20.0,
+      "max_len": 47,
+      "min_len": 4
+    },
+    "chnsenticorp": {
+      "name": "ChnSentiCorp",
+      "language": "zh",
+      "source": "lansinuote/ChnSentiCorp",
+      "n_samples": 7977,
+      "n_classes": 2,
+      "label_distribution": {
+        "Negative": 4000,
+        "Positive": 3977
+      },
+      "avg_len": 95.84016547574277,
+      "median_len": 67.0,
+      "max_len": 1784,
+      "min_len": 4
+    }
+  },
+  "feature_stats": {
+    "ag_news": {
+      "n_train": 5473,
+      "n_val": 782,
+      "n_test": 1564,
+      "tfidf_dim": 20000,
+      "nn_vocab_size": 12410,
+      "nn_seq_len": 54
+    },
+    "20news_4class": {
+      "n_train": 1626,
+      "n_val": 233,
+      "n_test": 465,
+      "tfidf_dim": 20000,
+      "nn_vocab_size": 17653,
+      "nn_seq_len": 512
+    },
+    "tnews": {
+      "n_train": 3499,
+      "n_val": 500,
+      "n_test": 1000,
+      "tfidf_dim": 10429,
+      "nn_vocab_size": 2348,
+      "nn_seq_len": 30
+    },
+    "chnsenticorp": {
+      "n_train": 5583,
+      "n_val": 798,
+      "n_test": 1596,
+      "tfidf_dim": 20000,
+      "nn_vocab_size": 3164,
+      "nn_seq_len": 217
+    }
+  },
+  "results": [
+    {
+      "dataset_key": "ag_news",
+      "dataset": "AG News",
+      "language": "en",
+      "model": "TF-IDF + Logistic Regression",
+      "accuracy": 0.9040920716112532,
+      "macro_f1": 0.9043233375422713,
+      "train_time_sec": 0.2788374423980713,
+      "inference_time_sec": 0.00054168701171875,
+      "n_params": 80004,
+      "per_class_f1": {
+        "World": 0.9148936170212766,
+        "Sports": 0.9504447268106735,
+        "Business": 0.8825,
+        "Sci/Tech": 0.8694550063371356
+      }
+    },
+    {
+      "dataset_key": "ag_news",
+      "dataset": "AG News",
+      "language": "en",
+      "model": "TF-IDF + Linear SVM",
+      "accuracy": 0.9111253196930946,
+      "macro_f1": 0.9113629524834924,
+      "train_time_sec": 0.03442883491516113,
+      "inference_time_sec": 0.0,
+      "n_params": 80004,
+      "per_class_f1": {
+        "World": 0.9238985313751669,
+        "Sports": 0.9607097591888466,
+        "Business": 0.8850432632880099,
+        "Sci/Tech": 0.8758002560819462
+      }
+    },
+    {
+      "dataset_key": "ag_news",
+      "dataset": "AG News",
+      "language": "en",
+      "model": "TextCNN",
+      "accuracy": 0.9040920716112532,
+      "macro_f1": 0.9044917982801312,
+      "train_time_sec": 7.702535629272461,
+      "inference_time_sec": 0.08984088897705078,
+      "n_params": 1743584,
+      "per_class_f1": {
+        "World": 0.9164490861618799,
+        "Sports": 0.9521345407503234,
+        "Business": 0.8765133171912833,
+        "Sci/Tech": 0.872870249017038
+      }
+    },
+    {
+      "dataset_key": "ag_news",
+      "dataset": "AG News",
+      "language": "en",
+      "model": "BiLSTM",
+      "accuracy": 0.8861892583120204,
+      "macro_f1": 0.8862857474517052,
+      "train_time_sec": 14.104458808898926,
+      "inference_time_sec": 0.20847153663635254,
+      "n_params": 1919749,
+      "per_class_f1": {
+        "World": 0.910547396528705,
+        "Sports": 0.9405815423514539,
+        "Business": 0.8602409638554217,
+        "Sci/Tech": 0.8337730870712401
+      }
+    },
+    {
+      "dataset_key": "20news_4class",
+      "dataset": "20 Newsgroups",
+      "language": "en",
+      "model": "TF-IDF + Logistic Regression",
+      "accuracy": 0.8580645161290322,
+      "macro_f1": 0.8580400820734569,
+      "train_time_sec": 0.20186185836791992,
+      "inference_time_sec": 0.0010042190551757812,
+      "n_params": 80004,
+      "per_class_f1": {
+        "comp.graphics": 0.8786610878661087,
+        "rec.sport.baseball": 0.8584070796460177,
+        "sci.med": 0.8354430379746836,
+        "talk.politics.guns": 0.8596491228070176
+      }
+    },
+    {
+      "dataset_key": "20news_4class",
+      "dataset": "20 Newsgroups",
+      "language": "en",
+      "model": "TF-IDF + Linear SVM",
+      "accuracy": 0.875268817204301,
+      "macro_f1": 0.8751717923292613,
+      "train_time_sec": 0.02404046058654785,
+      "inference_time_sec": 0.0,
+      "n_params": 80004,
+      "per_class_f1": {
+        "comp.graphics": 0.8925619834710744,
+        "rec.sport.baseball": 0.875,
+        "sci.med": 0.8559322033898306,
+        "talk.politics.guns": 0.8771929824561403
+      }
+    },
+    {
+      "dataset_key": "20news_4class",
+      "dataset": "20 Newsgroups",
+      "language": "en",
+      "model": "TextCNN",
+      "accuracy": 0.8731182795698925,
+      "macro_f1": 0.8732214874174656,
+      "train_time_sec": 21.74130129814148,
+      "inference_time_sec": 0.2450578212738037,
+      "n_params": 2414688,
+      "per_class_f1": {
+        "comp.graphics": 0.8936170212765957,
+        "rec.sport.baseball": 0.8879310344827587,
+        "sci.med": 0.8464730290456431,
+        "talk.politics.guns": 0.8648648648648649
+      }
+    },
+    {
+      "dataset_key": "20news_4class",
+      "dataset": "20 Newsgroups",
+      "language": "en",
+      "model": "BiLSTM",
+      "accuracy": 0.8064516129032258,
+      "macro_f1": 0.8069241792305157,
+      "train_time_sec": 75.22146248817444,
+      "inference_time_sec": 0.7386655807495117,
+      "n_params": 2590853,
+      "per_class_f1": {
+        "comp.graphics": 0.7953667953667953,
+        "rec.sport.baseball": 0.8038277511961722,
+        "sci.med": 0.8065843621399177,
+        "talk.politics.guns": 0.821917808219178
+      }
+    },
+    {
+      "dataset_key": "tnews",
+      "dataset": "TNews",
+      "language": "zh",
+      "model": "TF-IDF + Logistic Regression",
+      "accuracy": 0.533,
+      "macro_f1": 0.5298651489631243,
+      "train_time_sec": 0.3038771152496338,
+      "inference_time_sec": 0.0,
+      "n_params": 104300,
+      "per_class_f1": {
+        "news_culture": 0.4835164835164835,
+        "news_entertainment": 0.5407725321888412,
+        "news_sports": 0.6631578947368421,
+        "news_finance": 0.5700483091787439,
+        "news_car": 0.6153846153846154,
+        "news_edu": 0.5971563981042654,
+        "news_tech": 0.45595854922279794,
+        "news_military": 0.5572139303482587,
+        "news_travel": 0.4433497536945813,
+        "news_world": 0.37209302325581395
+      }
+    },
+    {
+      "dataset_key": "tnews",
+      "dataset": "TNews",
+      "language": "zh",
+      "model": "TF-IDF + Linear SVM",
+      "accuracy": 0.515,
+      "macro_f1": 0.5114191383193303,
+      "train_time_sec": 0.04015398025512695,
+      "inference_time_sec": 0.0020041465759277344,
+      "n_params": 104300,
+      "per_class_f1": {
+        "news_culture": 0.4864864864864865,
+        "news_entertainment": 0.5155555555555555,
+        "news_sports": 0.631578947368421,
+        "news_finance": 0.5544554455445545,
+        "news_car": 0.5887850467289719,
+        "news_edu": 0.5767441860465117,
+        "news_tech": 0.39361702127659576,
+        "news_military": 0.5771144278606966,
+        "news_travel": 0.4752475247524752,
+        "news_world": 0.3146067415730337
+      }
+    },
+    {
+      "dataset_key": "tnews",
+      "dataset": "TNews",
+      "language": "zh",
+      "model": "TextCNN",
+      "accuracy": 0.493,
+      "macro_f1": 0.4882341051074498,
+      "train_time_sec": 4.721270322799683,
+      "inference_time_sec": 0.0479586124420166,
+      "n_params": 457454,
+      "per_class_f1": {
+        "news_culture": 0.48936170212765956,
+        "news_entertainment": 0.5185185185185185,
+        "news_sports": 0.6372549019607843,
+        "news_finance": 0.5410628019323671,
+        "news_car": 0.5436893203883495,
+        "news_edu": 0.5,
+        "news_tech": 0.3825136612021858,
+        "news_military": 0.5217391304347826,
+        "news_travel": 0.45918367346938777,
+        "news_world": 0.28901734104046245
+      }
+    },
+    {
+      "dataset_key": "tnews",
+      "dataset": "TNews",
+      "language": "zh",
+      "model": "BiLSTM",
+      "accuracy": 0.394,
+      "macro_f1": 0.35772993658938307,
+      "train_time_sec": 9.230055809020996,
+      "inference_time_sec": 0.18340826034545898,
+      "n_params": 633355,
+      "per_class_f1": {
+        "news_culture": 0.3904109589041096,
+        "news_entertainment": 0.3805668016194332,
+        "news_sports": 0.5638297872340425,
+        "news_finance": 0.3984375,
+        "news_car": 0.5741626794258373,
+        "news_edu": 0.4878048780487805,
+        "news_tech": 0.11940298507462686,
+        "news_military": 0.49572649572649574,
+        "news_travel": 0.11290322580645161,
+        "news_world": 0.05405405405405406
+      }
+    },
+    {
+      "dataset_key": "chnsenticorp",
+      "dataset": "ChnSentiCorp",
+      "language": "zh",
+      "model": "TF-IDF + Logistic Regression",
+      "accuracy": 0.8771929824561403,
+      "macro_f1": 0.877130467571644,
+      "train_time_sec": 0.1551828384399414,
+      "inference_time_sec": 0.001516103744506836,
+      "n_params": 20001,
+      "per_class_f1": {
+        "Negative": 0.8799019607843137,
+        "Positive": 0.8743589743589744
+      }
+    },
+    {
+      "dataset_key": "chnsenticorp",
+      "dataset": "ChnSentiCorp",
+      "language": "zh",
+      "model": "TF-IDF + Linear SVM",
+      "accuracy": 0.8890977443609023,
+      "macro_f1": 0.8890314825617366,
+      "train_time_sec": 0.04266786575317383,
+      "inference_time_sec": 0.0007617473602294922,
+      "n_params": 20001,
+      "per_class_f1": {
+        "Negative": 0.8917431192660551,
+        "Positive": 0.8863198458574181
+      }
+    },
+    {
+      "dataset_key": "chnsenticorp",
+      "dataset": "ChnSentiCorp",
+      "language": "zh",
+      "model": "TextCNN",
+      "accuracy": 0.8621553884711779,
+      "macro_f1": 0.8621337387545861,
+      "train_time_sec": 31.442789793014526,
+      "inference_time_sec": 0.3556547164916992,
+      "n_params": 559494,
+      "per_class_f1": {
+        "Negative": 0.8604060913705583,
+        "Positive": 0.8638613861386139
+      }
+    },
+    {
+      "dataset_key": "chnsenticorp",
+      "dataset": "ChnSentiCorp",
+      "language": "zh",
+      "model": "BiLSTM",
+      "accuracy": 0.8226817042606517,
+      "macro_f1": 0.8225646082257757,
+      "train_time_sec": 71.59445261955261,
+      "inference_time_sec": 2.7021865844726562,
+      "n_params": 735747,
+      "per_class_f1": {
+        "Negative": 0.8180064308681672,
+        "Positive": 0.8271227855833843
+      }
+    }
+  ]
+}
