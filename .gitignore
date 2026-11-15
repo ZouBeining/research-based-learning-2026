@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# 实验数据缓存（脚本自动下载）
+experiment/data/
+
+# LaTeX 编译产物（main.pdf 为论文成品，保留在版本库中）
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 本机 agent 工具目录（内含指向仓库外部的符号链接，不可移植）
+.agents/
+.claude/
