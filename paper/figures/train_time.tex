@@ -1,0 +1,19 @@
+% 自动生成，请勿手工修改：训练时间对比（对数坐标）
+\begin{tikzpicture}
+\begin{axis}[
+  ybar, bar width=8pt, width=\linewidth, height=4.3cm,
+  ymode=log, ymin=0.02, ymax=200,
+  ylabel={训练时间 (秒，对数坐标)},
+  symbolic x coords={AGNews,20NG,TNews,ChnSenti},
+  xtick=data, x tick label style={font=\small},
+  legend style={at={(0.5,-0.20)}, anchor=north, legend columns=4, font=\small, draw=none},
+  legend image code/.code={\draw[#1] (0cm,-0.12cm) rectangle (0.30cm,0.12cm);}
+  enlarge x limits=0.18, ymajorgrids, grid style={gray!25},
+]
+\addplot+[fill=black!12, draw=black] coordinates {(AGNews,0.279) (20NG,0.202) (TNews,0.304) (ChnSenti,0.155)};
+\addplot+[fill=black!35, draw=black] coordinates {(AGNews,0.034) (20NG,0.024) (TNews,0.040) (ChnSenti,0.043)};
+\addplot+[fill=black!60, draw=black] coordinates {(AGNews,7.703) (20NG,21.741) (TNews,4.721) (ChnSenti,31.443)};
+\addplot+[fill=black!85, draw=black] coordinates {(AGNews,14.104) (20NG,75.221) (TNews,9.230) (ChnSenti,71.594)};
+\legend{线性：LR,线性：SVM,神经：TextCNN,神经：BiLSTM}
+\end{axis}
+\end{tikzpicture}

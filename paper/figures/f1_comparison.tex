@@ -1,0 +1,18 @@
+% 自动生成，请勿手工修改：宏平均 F1 对比
+\begin{tikzpicture}
+\begin{axis}[
+  ybar, bar width=8pt, width=\linewidth, height=4.3cm,
+  ymin=0, ymax=105, ylabel={宏平均 F1 (\%)},
+  symbolic x coords={AGNews,20NG,TNews,ChnSenti},
+  xtick=data, x tick label style={font=\small},
+  legend style={at={(0.5,-0.20)}, anchor=north, legend columns=4, font=\small, draw=none},
+  legend image code/.code={\draw[#1] (0cm,-0.12cm) rectangle (0.30cm,0.12cm);}
+  enlarge x limits=0.18, ymajorgrids, grid style={gray!25},
+]
+\addplot+[fill=black!12, draw=black] coordinates {(AGNews,90.43) (20NG,85.80) (TNews,52.99) (ChnSenti,87.71)};
+\addplot+[fill=black!35, draw=black] coordinates {(AGNews,91.14) (20NG,87.52) (TNews,51.14) (ChnSenti,88.90)};
+\addplot+[fill=black!60, draw=black] coordinates {(AGNews,90.45) (20NG,87.32) (TNews,48.82) (ChnSenti,86.21)};
+\addplot+[fill=black!85, draw=black] coordinates {(AGNews,88.63) (20NG,80.69) (TNews,35.77) (ChnSenti,82.26)};
+\legend{线性：LR,线性：SVM,神经：TextCNN,神经：BiLSTM}
+\end{axis}
+\end{tikzpicture}
